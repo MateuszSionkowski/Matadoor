@@ -1,0 +1,160 @@
+#fwidth {
+ width: 50px;
+}
+
+#fheight {
+ width: 50px;
+}
+
+#numbStart {
+ width: 20px;
+}
+#numbClick {
+ width: 20px;
+}
+
+
+#mouseUpBlock{
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    height:300px;
+    width:100%;
+    z-index: 11;
+    background-color: rgba(155, 0, 0, 0.0);
+    
+}
+
+#mouseDownBlock{
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    height:300px;
+    width:100%;
+    z-index: 11;
+    background-color: rgba(0, 0, 155, 0.0);
+    
+}
+
+#mouseRightBlock{
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    height:100%;
+    width:300px;
+    z-index: 11;
+    background-color: rgba(0, 155, 0, 0.0);
+    
+}
+body {
+    overflow: hidden;
+    font-family: sans;
+    text-shadow: 0px 0px 5px red;
+    color: white;
+    text-align: center;
+	
+}
+input {
+ border-color: red;
+}
+
+#mouseLeftBlock{
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    height:100%;
+    width:300px;
+    z-index: 11;
+    background-color: rgba(0, 50, 250, 0.0);
+    
+}
+
+#blocker{
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    height:100%;
+    width:100%;
+    z-index: -10;
+    background-color: rgba(156, 141, 206, 0.8);
+    
+}
+
+#finalizer{
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    height:100%;
+    width:100%;
+    z-index: -10;
+    background-color: rgba(100, 100, 100, 0.8);
+    display: none;
+    
+}
+
+#finalizerBlock{
+    position: relative;
+    top: 10%;
+    margin: 0 auto;
+    height:80%;
+    width:85%;
+    background-color: rgba(100, 100, 100, 0.8);
+    text-align: center;  
+    
+}
+
+#tarea{
+    
+    margin: 0 auto;
+    top: 10%;
+    height:80%;
+    width:85%;
+
+}
+
+#frame{
+    border: 0px;
+    visibility: hidden;
+}
+
+#logo {
+    display: block;
+    width: 30%;
+    margin: 0 auto;
+ }
+ 
+ #myProgress {
+  width: 20%;
+  background-color: white;
+  margin: 0 auto;
+  display: none;
+  border-radius: 25px;
+  padding: 10px;
+}
+
+#myBar {
+  width: 15%;
+  height: 30px;
+  background-color: #ed1c24;
+  border-radius: 25px;
+}
+
+#finalize {
+  display: none;
+}
+
+#cancel {
+  display: none;
+}
