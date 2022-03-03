@@ -16,11 +16,12 @@
    <input type="text" id="fwidth" name="fwidth" title="Never use scrollbars on the iFrame cause the victim will not. If the element to be clicked is out of sight - raise the size of the iFrame (by width and height) and use scrollbars of the main window.">
    <label for="fheight">Frame Height:</label>
    <input type="text" id="fheight" name="fheight" title="Never use scrollbars on the iFrame cause the victim will not. If the element to be clicked is out of sight - raise the size of the iFrame (by width and height) and use scrollbars of the main window.">
-     <label for="numbStart">Numb After Start (seconds):</label>
+   <label for="numbStart">Numb After Start (seconds):</label>
    <input type="text" id="numbStart" name="numbStart" value="4" title="Matadoor recognizes clicks by monitoring where focus of the browser resides. If it loses sight of the browser's focus - it means that the focus went into the iFrame. That is interpreted as a click. You click an iFrame -> focus goes into that iFrame -> Matadoor knows that a click happened and forces focus to a known element to be able to start over with another click. Problem is that when some elements render within the iFrame they can grab browser's focus and Matadoor will interpret it as a click. For example if a search box renders in the iFrame and puts in the '|' prompt - it grabs the focus. Matadoor has a workaround for it. It becomes numb (unresponsive to focus switches) for few seconds after the initial creation of the iFrame and after each click. Numb periods are counted in seconds. In recorder view you will see the Matadoor logo and a loading screen. It means that you are in a numb period. The whole page should finish loading during the numb period. If it doesn't - raise the numb period.">
-     <label for="numbClick">Numb After Click (seconds):</label>
+   <label for="numbClick">Numb After Click (seconds):</label>
    <input type="text" id="numbClick" name="numbClick" value="2" title="Matadoor recognizes clicks by monitoring where focus of the browser resides. If it loses sight of the browser's focus - it means that the focus went into the iFrame. That is interpreted as a click. You click an iFrame -> focus goes into that iFrame -> Matadoor knows that a click happened and forces focus to a known element to be able to start over with another click. Problem is that when some elements render within the iFrame they can grab browser's focus and Matadoor will interpret it as a click. For example if a search box renders in the iFrame and puts in the '|' prompt - it grabs the focus. Matadoor has a workaround for it. It becomes numb (unresponsive to focus switches) for few seconds after the initial creation of the iFrame and after each click. Numb periods are counted in seconds. In recorder view you will see the Matadoor logo and a loading screen. It means that you are in a numb period. The whole page should finish loading during the numb period. If it doesn't - raise the numb period.">
-  
+   <label for="iOpacity">iFrame Opacity (%):</label>  
+   <input type="number" id="iOpacity" name="iOpacity" value="1" min="0" max="100" title="% of iFrame visibility. 0% means invisible, 100% means visible and completely non-transparent. Values other than 0 are for explanation purposes." >
    <input type="submit" id="start" name="start" value="Start" onclick="start()">
   </span>
   <input type="submit" id="finalize" name="finalize" value="Get JS code" onclick="finalize()">
@@ -37,18 +38,19 @@
 <div id="blocker">
 	<img id="logo" src="logo.png">  
 	 <ol id="instruction">
-	  <li>Privide a Start URL of a vulnerable website and click "Start"</li>
+	  <li>Provide a Start URL of a target website and click "Start"</li>
+	  <li>If the page renders without error - it doesn't implement X-Frame-Options header and is potentially vulnerable</li>
 	  <li>Perform actions on target website by clicking your mouse</li>
-	  <li>Click "Get JS Code" to get a block of code ready to be pasted on a website you control (site needs to be http:// or https://, not file:///)</li>	
+	  <li>Click "Get JS Code" to get a block of code ready to be pasted on a website you control (site needs to be "http://" or "https://", not "file:///")</li>	
 	  <li>Now the users of your website will be performing exactly the action that you recorded</li>
 	  <li>When your user clicks any link or button on the website you control - he actually clicks an iFrame with a vulnerable page from "Start URL"</li>
 	  <li>Matadoor will do its best to actually perform the action that is triggered by the element user meant to click. </li>
 	  <li>Each click is being performed exactly at the spot you recorded</li>
-	  <li>If the privileged action you recorded has 3 clicks, victim needs to interact with links or buttons 3 times</li>
-	  <li>The actions are performed from user's browser, allowing to use his preestablished logon (session)</li>
+	  <li>If the privileged action you recorded consists of X clicks, victim needs to interact with links or buttons X times</li>
+	  <li>The actions are performed from user's browser, allowing to use his preestablished logon (session), potentially bypassing 2FA or SSO solutions. </li>
 	  <li>Don't break the law or invade anyone's privacy. Matadoor is all about building proof of concept pages to use in bug bounty programs or penetration tests.</li>
-	  <li>Matadoor was created to oppose a belief that an action cannot be click-jacked if it requires going through multiple screens/clicks</li>
-	  <li>Learn more on https://matadoor.io/how-it-works</li>
+	  <li>Matadoor was created to oppose a belief that an action cannot be reasonably click-jacked if it requires going through multiple screens/clicks</li>
+	  <li>Learn more on https://matadoor.io/how-it-works.html</li>
 	</ol> 
 	
 	<div id="myProgress">
